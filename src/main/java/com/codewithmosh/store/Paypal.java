@@ -2,7 +2,7 @@ package com.codewithmosh.store;
 
 import org.springframework.stereotype.Component;
 
-@Component("paypal")
+//@Component("paypal")
 public class Paypal implements PaymentService {
 
     public void processPayment(double amount) {
