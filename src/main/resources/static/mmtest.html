@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش HTML - نمونه کامل</title>
+    <style>
+        /* استایل‌های CSS */
+        * {
+            margin: 1px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align-last: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            background:linear-gradient(90deg, #a3a2a2 0%, #333 100%);
+            padding: 0.125rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        article {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        aside {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            direction: ltr;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            margin: 1rem 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #dbdbdb;
+        }
+
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #667eea;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a6fd8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            margin: 0.25rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<!-- هدر صفحه -->
+<header>
+    <div class="container">
+        <h1>آموزش کامل HTML</h1>
+        <p>یادگیری HTML به زبان ساده و با مثال‌های عملی</p>
+    </div>
+</header>
+
+<!-- نوار ناوبری -->
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="#home">خانه</a></li>
+            <li><a href="#basics">مبانی HTML</a></li>
+            <li><a href="#elements">المان‌ها</a></li>
+            <li><a href="#forms">فرم‌ها</a></li>
+            <li><a href="#tables">جداول</a></li>
+            <li><a href="#contact">تماس</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- محتوای اصلی -->
+    <div class="main-content">
+        <!-- مقاله اصلی -->
+        <article>
+            <section id="basics">
+                <h2>مبانی HTML</h2>
+                <p>HTML زبان استاندارد برای ایجاد صفحات وب است. HTML مخفف <strong>Hyper Text Markup Language</strong> می‌باشد.</p>
+
+                <h3>ساختار اصلی یک سند HTML</h3>
+                <div class="code-example">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;title&gt;عنوان صفحه&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;h1&gt;این یک عنوان است&lt;/h1&gt;
+                    &lt;p&gt;این یک پاراگراف است.&lt;/p&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </div>
+            </section>
+
+            <section id="elements">
+                <h2>المان‌های مهم HTML</h2>
+
+                <h3>عنوان‌ها (Headings)</h3>
+                <h1>عنوان سطح 1</h1>
+                <h2>عنوان سطح 2</h2>
+                <h3>عنوان سطح 3</h3>
+                <h4>عنوان سطح 4</h4>
+                <h5>عنوان سطح 5</h5>
+                <h6>عنوان سطح 6</h6>
+
+                <h3>لیست‌ها</h3>
+                <h4>لیست مرتب (Ordered List):</h4>
+                <ol>
+                    <li>آیتم اول</li>
+                    <li>آیتم دوم</li>
+                    <li>آیتم سوم</li>
+                </ol>
+
+                <h4>لیست نامرتب (Unordered List):</h4>
+                <ul>
+                    <li>آیتم اول</li>
+                    <li>آیتم دوم</li>
+                    <li>آیتم سوم</li>
+                </ul>
+
+                <h3>لینک‌ها</h3>
+                <p>این یک <a href="https://www.example.com">لینک نمونه</a> است.</p>
+
+                <h3>تصاویر</h3>
+                <img src="https://via.placeholder.com/300x150" alt="تصویر نمونه" style="max-width: 100%; height: auto;">
+            </section>
+        </article>
+
+        <!-- سایدبار -->
+        <aside>
+            <h3>تگ‌های پرکاربرد HTML</h3>
+            <div class="tag">&lt;div&gt;</div>
+            <div class="tag">&lt;p&gt;</div>
+            <div class="tag">&lt;a&gt;</div>
+            <div class="tag">&lt;img&gt;</div>
+            <div class="tag">&lt;ul&gt;</div>
+            <div class="tag">&lt;ol&gt;</div>
+            <div class="tag">&lt;li&gt;</div>
+            <div class="tag">&lt;table&gt;</div>
+            <div class="tag">&lt;form&gt;</div>
+            <div class="tag">&lt;input&gt;</div>
+
+            <h3 style="margin-top: 2rem;">ویژگی‌های مهم</h3>
+            <ul>
+                <li><strong>id:</strong> شناسه یکتا برای المان</li>
+                <li><strong>class:</strong> کلاس برای استایل‌دهی</li>
+                <li><strong>style:</strong> استایل inline</li>
+                <li><strong>src:</strong> آدرس منبع (برای تصاویر)</li>
+                <li><strong>href:</strong> آدرس لینک</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- بخش جداول -->
+    <section id="tables" style="margin-bottom: 2rem;">
+        <h2>جداول در HTML</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>نام تگ</th>
+                <th>توضیح</th>
+                <th>مثال</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>تعریف جدول</td>
+                <td>جدول اصلی</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>سطر جدول</td>
+                <td>Table Row</td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>سلول داده</td>
+                <td>Table Data</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>سرستون جدول</td>
+                <td>Table Header</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- بخش فرم‌ها -->
+    <section id="forms">
+        <h2>فرم‌ها در HTML</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">نام کامل:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">ایمیل:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">رمز عبور:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">کشور:</label>
+                <select id="country" name="country">
+                    <option value="ir">ایران</option>
+                    <option value="us">آمریکا</option>
+                    <option value="uk">انگلیس</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>جنسیت:</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">مرد</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">زن</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>علاقه‌مندی‌ها:</label>
+                <div>
+                    <input type="checkbox" id="sports" name="interests" value="sports">
+                    <label for="sports">ورزش</label>
+
+                    <input type="checkbox" id="music" name="interests" value="music">
+                    <label for="music">موسیقی</label>
+
+                    <input type="checkbox" id="books" name="interests" value="books">
+                    <label for="books">کتاب</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">پیام:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit">ارسال فرم</button>
+        </form>
+    </section>
+</div>
+
+<!-- فوتر -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 آموزش HTML. تمام حقوق محفوظ است.</p>
+        <p>این صفحه برای اهداف آموزشی ایجاد شده است.</p>
+    </div>
+</footer>
+
+<script>
+    // JavaScript ساده برای تعامل
+    document.addEventListener('DOMContentLoaded', function() {
+        // تغییر رنگ هدر هنگام کلیک
+        const header = document.querySelector('header');
+        header.addEventListener('click', function() {
+            this.style.background = 'linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)';
+        });
+
+        // نمایش پیام هنگام ارسال فرم
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('فرم با موفقیت ارسال شد! (این فقط یک نمونه است)');
+        });
+    });
+</script>
+</body>
+</html>
