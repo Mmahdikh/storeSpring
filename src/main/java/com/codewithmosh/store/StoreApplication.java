@@ -19,9 +19,11 @@ public class StoreApplication {
         orderService.placeOrder();
 
 
+
 //        var order = new OrderService(new Paypal());
 //        order.setPaymentService(new Paypal());
 //        order.placeOrder();
     }
+
 
 }
